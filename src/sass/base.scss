@@ -1,0 +1,41 @@
+$primary-color: #136a8a;
+$secondary-color: #267871;
+$white-color: #FEFEFE;
+$carrot: #e67e22;
+
+/*! 
+Nollställer marginaler och fyllnader, samt ändrar boxmodellsbeteendet
+*/
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*! Ändrar om rotens typsnittstorlek till procent så att jag sedan kan modifiera mina rems i mindre skärmar */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/*! Väljer typsnitt, färg, storlek för body-elementet */
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: rgb(241, 241, 241);
+    overflow-x: hidden;
+}
+
+/*! Tar bort standardstil för länkarna */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*! Tar bort standardstil för ul-listorna */
+ul { list-style: none; }

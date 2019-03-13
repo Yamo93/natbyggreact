@@ -1,0 +1,376 @@
+ @import '../../sass/variables.scss';
+
+/*! Stil för övre sektionen */
+/*! Navigationspilen som tar en till översta delen av sidan */
+.toparrow {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #FEFEFE;
+    border: 1px solid $primary-color;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+
+    & > * {
+        font-size: 4rem;
+        color: $primary-color;
+        transition: color .5s;
+
+        &:hover {
+            color: $carrot;
+        }
+    }
+}
+
+.top-sec {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    //height: 1200px;
+    min-height: 600px;
+    max-height: 1800px;
+    position: relative;
+
+    /*! Media queries för övre sektionen */
+    @media screen and (max-width: 950px) {
+        padding-top: 0;
+    }
+
+    /*! Stil för navigationsknappen i mindre skärmar */
+    .hamburger {
+        /*! Den är osynlig som standard */
+        display: none;
+        font-size: 4rem;
+        /*! Låter ikonen hamna ovanpå andra element*/
+        z-index: 40;
+        position: fixed;
+        top: 3rem;
+        right: 2rem;
+        cursor: pointer;
+
+        /*! Visar knappen i mindre skärmar */
+        @media screen and (max-width: 800px) {
+            display: block;
+        }
+    }
+
+    /*! En gömd checkbox som triggar igång navigationsknappen */
+    input[type=checkbox] {
+        display: none;
+    }
+
+
+    /*! När checkboxen är aktiverad så visas nav-menyn */
+    input[type=checkbox]:checked ~ .navbar .navbar__menu {
+        display: flex;
+    }
+
+    /*! Stil för navigationsfältet */
+    input[type=checkbox]:checked ~ .navbar {
+        height: 50%;
+
+        @media screen and (max-height: 400px) {
+            height: 80%;
+        }
+    }
+
+    .navbar {
+        width: 100%;
+        height: 10rem;
+        //max-height: 120px;
+        background-color: $white-color;
+        position: fixed;
+        top: 0;
+        /*! Låter menyn hamna ovanpå andra element */
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: 2px 3px 3px rgba(0, 0, 0, .2);
+        transition: all .4s;
+
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+            height: 15%;
+        }
+
+        &__logo {
+            width: 340px;
+            height: 9rem;
+
+            @media screen and (max-width: 450px) {
+                width: 220px;
+            }
+        }
+
+        &__menu {
+            display: flex;
+            align-items: center;
+            // @supports(justify-content: space-evenly) {
+            //     justify-content: space-evenly;
+            // }
+            justify-content: space-between;
+            height: 80%;
+            max-height: 15rem;
+            width: 35%;
+            font-weight: 600;
+
+            @media screen and (max-width: 800px) {
+                display: none;
+                font-size: 2.8rem;
+                width: 100%;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                margin-top: 5rem;
+                margin-right: auto;
+                margin-left: auto;
+                min-width: 9.5rem;
+                height: 50rem;
+            }
+        }
+
+        &__menu-item {
+            border-bottom: 1.5px solid transparent;
+            transition: all .3s;
+    
+        }
+
+        /*! Animationseffekt vid hover-läge */
+        &__menu-item:hover {
+            transform: translateY(-3px);
+            border-bottom: 1.5px solid $carrot;
+        }
+
+        &__menu a:link,
+        &__menu a:visited {
+            color: $primary-color;
+            font-size: 1.7rem;
+            padding-bottom: 2px;
+            transition: all .3s;
+        }
+
+        &__menu a:hover,
+        &__menu a:active {
+            color: $carrot;
+        }
+
+        &__menu a.active:link,
+        &__menu a.active:visited { color: $carrot; }
+
+
+    }
+
+    .wrapper {
+        /*! Låter elementet hamna ovanpå andra element*/
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        min-height: 800px;
+        color: $white-color;
+        /*! En linear-gradientbakgrund */
+        background: #136a8a;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        /*! Skapar "skärande effekt" i nedkanten av elementet */
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 83%);
+        clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 83%);
+        display: flex;
+        justify-content: space-around;
+
+        /*! Media queries för framsidan */
+        @media screen and (max-width: 950px) {
+            flex-direction: column;
+            /*! Tar bort skärande effekten i mindre skärmar */
+            -webkit-clip-path: none;
+            clip-path: none;
+            height: 80%;
+        }
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        min-height: 50rem;
+        padding: 70px;
+        padding-bottom: 0;
+
+        @media screen and (max-width: 950px) {
+            height: 400px;
+            width: 100%;
+            align-items: center;
+            margin-top: 20rem;
+        }
+
+        @media screen and (max-width: 800px) {
+            margin-top: 25rem;
+        }
+
+        @media screen and (max-width: 750px) {
+            margin-top: 10rem;
+            min-height: 70rem;
+            padding: 45px;
+            padding-bottom: 0;
+        }
+
+        @media screen and (max-width: 380px) {
+            min-height: 85rem;
+            margin-top: 15rem;
+        }
+
+        &__title {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        &__desc {
+            font-weight: 300;
+            font-size: 3rem;
+            width: 60%;
+            margin-bottom: 1.5rem;
+            
+            @media screen and (max-width: 950px) {
+                width: 80%;
+                text-align: center;
+            }
+            @media screen and (max-width: 700px) {
+                width: 80%;
+            }
+
+            @media screen and (max-width: 480px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__form {
+            width: 80%;
+            padding: 30px 0;
+            display: flex;
+
+            @media screen and (max-width: 480px) {
+                width: 100%;
+            }
+
+            @media screen and (max-width: 380px) {
+                width: 120%;
+                /*! I mindre skärmar ligger inputen på varandra */
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 80px;
+                height: 120px;
+            }
+
+            input[type=email] {
+                padding: 1.5rem .5rem;
+                width: 50%;
+                min-width: 18rem;
+                min-height: 7rem;
+                font-family: inherit;
+                font-size: 2rem;
+
+                @media screen and (max-width: 600px) {
+                    font-size: 1.7rem;
+                    min-width: 15rem;
+                    min-height: 4rem;
+                }
+
+                @media screen and (max-width: 380px) {
+                    width: 80%;
+                    min-width: 10rem;
+                    min-height: 5.5rem;
+                }
+            }
+            
+            input[type=submit] {
+                width: 40%;
+                min-width: 18rem;
+                min-height: 7rem;
+                padding: 6px 3px;
+                border: 1px solid $primary-color;
+                background-color: $white-color;
+                color: $primary-color;
+                cursor: pointer;
+                outline: none;
+                font-family: inherit;
+                font-size: 1.8rem;
+                font-weight: 600;
+                transition: all .3s;
+
+                @media screen and (max-width: 600px) {
+                    font-size: 1.6rem;
+                    min-width: 15rem;
+                    min-height: 4rem;
+                }
+
+                @media screen and (max-width: 380px) {
+                    width: 80%;
+                    min-width: 10rem;
+                    min-height: 5.5rem;
+                }
+            }
+
+            input[type=submit]:hover {
+                background-color: $carrot;
+                color: $white-color;
+                border: 1px solid $carrot;
+            }
+        }
+    }
+
+    .right-img {
+        width: 70%;
+        height: 100%;
+        min-height: 630px;
+        /*! Sektionen har en bild som bakgrund med en grå färgeffekt */
+        background-image: linear-gradient(to bottom, rgba(63, 63, 63, 0.61), rgba(145, 145, 145, 0.61)), url(../../img/rawpixel-678089-unsplash.jpg);
+        /*! Placering av bakgrundsbild */
+        background-size: cover;
+        background-position: center;
+        background-attachment: local;
+
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            height: 400px;
+            padding: 50px;
+        }
+    }
+
+}
+
+/*! Speciella höjdlängder vid mindre skärmar */
+.special-top-sec {
+    @media screen and (max-width: 850px) {
+        min-height: 2400px;
+    }
+
+    @media screen and (max-width: 560px) {
+        min-height: 2500px;
+    }
+    @media screen and (max-width: 550px) {
+        min-height: 2900px;
+    }
+}
+
+.service-top-sec {
+
+    @media screen and (max-width: 950px) {
+        padding-top: 100px;
+
+    }
+}
+
+.contact-top-sec {
+    padding-top: 100px;
+}
