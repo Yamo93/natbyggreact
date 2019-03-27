@@ -1,0 +1,158 @@
+ @import '../../../utils/variables.scss';
+
+/*! Stil för övre sektionen */
+/*! Navigationspilen som tar en till översta delen av sidan */
+.toparrow {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #FEFEFE;
+    border: 1px solid $primary-color;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+
+    & > * {
+        font-size: 4rem;
+        color: $primary-color;
+        transition: color .5s;
+
+        &:hover {
+            color: $carrot;
+        }
+    }
+}
+
+.top-sec {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    //height: 1200px;
+    min-height: 600px;
+    max-height: 1800px;
+    position: relative;
+
+    /*! Media queries för övre sektionen */
+    @media screen and (max-width: 950px) {
+        padding-top: 0;
+    }
+
+    /*! Stil för navigationsknappen i mindre skärmar */
+    .hamburger {
+        /*! Den är osynlig som standard */
+        display: none;
+        font-size: 4rem;
+        /*! Låter ikonen hamna ovanpå andra element*/
+        z-index: 40;
+        position: fixed;
+        top: 3rem;
+        right: 2rem;
+        cursor: pointer;
+
+        /*! Visar knappen i mindre skärmar */
+        @media screen and (max-width: 800px) {
+            display: block;
+        }
+    }
+
+    /*! En gömd checkbox som triggar igång navigationsknappen */
+    input[type=checkbox] {
+        display: none;
+    }
+
+
+    /*! När checkboxen är aktiverad så visas nav-menyn */
+    input[type=checkbox]:checked ~ .navbar .navbar__menu {
+        display: flex;
+    }
+
+    /*! Stil för navigationsfältet */
+    input[type=checkbox]:checked ~ .navbar {
+        height: 50%;
+
+        @media screen and (max-height: 400px) {
+            height: 80%;
+        }
+    }
+
+
+
+    .wrapper {
+        /*! Låter elementet hamna ovanpå andra element*/
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        min-height: 800px;
+        color: $white-color;
+        /*! En linear-gradientbakgrund */
+        background: #136a8a;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        /*! Skapar "skärande effekt" i nedkanten av elementet */
+        -webkit-clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 83%);
+        clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 83%);
+        display: flex;
+        justify-content: space-around;
+
+        /*! Media queries för framsidan */
+        @media screen and (max-width: 950px) {
+            flex-direction: column;
+            /*! Tar bort skärande effekten i mindre skärmar */
+            -webkit-clip-path: none;
+            clip-path: none;
+            height: 80%;
+        }
+    }
+
+    .right-img {
+        width: 70%;
+        height: 100%;
+        min-height: 630px;
+        /*! Sektionen har en bild som bakgrund med en grå färgeffekt */
+        background-image: linear-gradient(to bottom, rgba(63, 63, 63, 0.61), rgba(145, 145, 145, 0.61)), url(../../../img/rawpixel-678089-unsplash.jpg);
+        /*! Placering av bakgrundsbild */
+        background-size: cover;
+        background-position: center;
+        background-attachment: local;
+
+        @media screen and (max-width: 950px) {
+            width: 100%;
+            height: 400px;
+            padding: 50px;
+        }
+    }
+
+}
+
+/*! Speciella höjdlängder vid mindre skärmar */
+.special-top-sec {
+    @media screen and (max-width: 850px) {
+        min-height: 2400px;
+    }
+
+    @media screen and (max-width: 560px) {
+        min-height: 2500px;
+    }
+    @media screen and (max-width: 550px) {
+        min-height: 2900px;
+    }
+}
+
+.service-top-sec {
+
+    @media screen and (max-width: 950px) {
+        padding-top: 100px;
+
+    }
+}
+
+.contact-top-sec {
+    padding-top: 100px;
+}

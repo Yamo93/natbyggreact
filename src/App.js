@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import './sass/base.scss';
+import './utils/base.scss';
 
-import TopSec from './components/TopSec/TopSec';
+import MainPage from './routes/mainpage/MainPage/MainPage';
+
+// import MainTopSec from './components/MainTopSec/MainTopSec';
+// import MainInfoSec from './components/MainInfoSec/MainInfoSec';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <TopSec />
+        <MainPage />
       </div>
     );
   }

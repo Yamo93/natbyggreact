@@ -1,0 +1,134 @@
+@import '../../../utils/variables.scss';
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    min-height: 50rem;
+    padding: 70px;
+    padding-bottom: 0;
+
+    @media screen and (max-width: 950px) {
+        height: 400px;
+        width: 100%;
+        align-items: center;
+        margin-top: 20rem;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 25rem;
+    }
+
+    @media screen and (max-width: 750px) {
+        margin-top: 10rem;
+        min-height: 70rem;
+        padding: 45px;
+        padding-bottom: 0;
+    }
+
+    @media screen and (max-width: 380px) {
+        min-height: 85rem;
+        margin-top: 15rem;
+    }
+
+    &__title {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__desc {
+        font-weight: 300;
+        font-size: 3rem;
+        width: 60%;
+        margin-bottom: 1.5rem;
+        
+        @media screen and (max-width: 950px) {
+            width: 80%;
+            text-align: center;
+        }
+        @media screen and (max-width: 700px) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: 480px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__form {
+        width: 80%;
+        padding: 30px 0;
+        display: flex;
+
+        @media screen and (max-width: 480px) {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 380px) {
+            width: 120%;
+            /*! I mindre skärmar ligger inputen på varandra */
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 80px;
+            height: 120px;
+        }
+
+        input[type=email] {
+            padding: 1.5rem .5rem;
+            width: 50%;
+            min-width: 18rem;
+            min-height: 7rem;
+            font-family: inherit;
+            font-size: 2rem;
+
+            @media screen and (max-width: 600px) {
+                font-size: 1.7rem;
+                min-width: 15rem;
+                min-height: 4rem;
+            }
+
+            @media screen and (max-width: 380px) {
+                width: 80%;
+                min-width: 10rem;
+                min-height: 5.5rem;
+            }
+        }
+        
+        input[type=submit] {
+            width: 40%;
+            min-width: 18rem;
+            min-height: 7rem;
+            padding: 6px 3px;
+            border: 1px solid $primary-color;
+            background-color: $white-color;
+            color: $primary-color;
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
+            font-size: 1.8rem;
+            font-weight: 600;
+            transition: all .3s;
+
+            @media screen and (max-width: 600px) {
+                font-size: 1.6rem;
+                min-width: 15rem;
+                min-height: 4rem;
+            }
+
+            @media screen and (max-width: 380px) {
+                width: 80%;
+                min-width: 10rem;
+                min-height: 5.5rem;
+            }
+        }
+
+        input[type=submit]:hover {
+            background-color: $carrot;
+            color: $white-color;
+            border: 1px solid $carrot;
+        }
+    }
+}

@@ -1,0 +1,114 @@
+@import '../../../../utils/variables.scss';
+
+    /*! Tekniksektionen */
+    .technologies {
+        width: 100%;
+        //margin-top: 4rem;
+        margin-top: 3rem;
+        height: 100%;
+        min-height: 400px;
+        max-height: 1100px;
+        padding: 11rem 2rem;
+        background-color: $primary-color;
+        color: $white-color;
+        /*! Skapar "skärande" effekt i bottenkanten */
+        -webkit-clip-path: polygon(0 11%, 100% 0%, 100% 87%, 0% 100%);
+        clip-path: polygon(0 11%, 100% 0%, 100% 87%, 0% 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+
+        @media screen and (max-width: 950px) {
+            /*! Tar bort skärande effekt i mindre skärmar */
+            -webkit-clip-path: none;
+            clip-path: none;
+            height: 100%;
+            margin-top: 18rem;
+        }
+
+        @media screen and (max-width: 480px) {
+            margin-top: -15rem;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        @media screen and (max-width: 400px) {
+            max-height: 1150px;
+        }
+
+        @media screen and (max-width: 380px) {
+            margin-top: -25rem;
+        }
+
+        &__title {
+            text-align: center;
+            display: inline-block;
+            //width: 20%;
+            margin: 15px auto;
+            margin-bottom: 5rem;
+            font-size: 3.2rem;
+            padding-bottom: 5px;
+            border-bottom: 2px solid $carrot;
+
+            @media screen and (max-width: 450px) {
+                margin-bottom: 12rem;
+                border-bottom: none;
+            }
+        }
+
+        .icon-box {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+
+            @media screen and (max-width: 950px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+
+            @media screen and (max-width: 950px) {
+                width: 60%;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin-bottom: 19rem;
+            }
+
+            &--title {
+                text-align: center;
+                font-size: 2.4rem;
+                margin-bottom: 1.5rem;
+                @media screen and (max-width: 950px) {
+                    font-size: 2.8rem;
+                }
+            }
+
+            .code-icon {
+                font-size: 8rem;
+                color: $carrot;
+
+                @media screen and (max-width: 950px) {
+                    font-size: 8rem;
+                }
+            }
+        }
+
+        .icon:hover {
+            background-color: rgba($secondary-color, .5);
+            /*! Animationseffekt vid hover-läge */
+            transform: translateY(-4px);
+        }
+
+    }
