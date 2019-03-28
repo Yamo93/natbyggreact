@@ -23,7 +23,7 @@ const Footer = (props) => {
             <i className="fab fa-twitter social-icon"></i>
         </div>
     </div>
-    <p className="footer__copyright">Copyright 2018 &copy; av <a href="mailto:yamo.gebrewold@gmail.com" class="email" title="Mejladress till den ansvarige för sidan">Yamo Gebrewold</a></p>
+    <p className="footer__copyright">Copyright 2018 &copy; av <a href="mailto:yamo.gebrewold@gmail.com" className="email" title="Mejladress till den ansvarige för sidan">Yamo Gebrewold</a></p>
     </footer>
     );
 };

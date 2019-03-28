@@ -1,19 +1,21 @@
 import React from 'react';
 
 import MainTopSec from '../../../views/MainTopSec/MainTopSec';
-import MainInfoSec from '../MainInfoSec/MainInfoSec';
+
 import ContactBox from '../../../views/ContactBox/ContactBox';
 import Footer from '../../../views/Footer/Footer';
 
-const MainPage = (props) => {
+import AreaSpace from '../../../views/AreaSpace/AreaSpace';
+
+const ServicesPage = (props) => {
     return (
         <>
-            <MainTopSec page="mainpage" />
-            <MainInfoSec />
+            <MainTopSec page="services" />
+            <AreaSpace />
             <ContactBox />
             <Footer />
         </>
     );
 };
 
-export default MainPage;
+export default ServicesPage;
