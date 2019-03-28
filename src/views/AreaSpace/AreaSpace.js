@@ -3,8 +3,18 @@ import React from 'react';
 import './AreaSpace.scss';
 
 const AreaSpace = (props) => {
+    let classes = ['space'];
+    switch (props.page) {
+        case "services":
+            classes.push('service-space');
+            break;
+        case "about":
+            classes.push('about-space');
+        default: 
+            break;
+    }
     return (
-        <div className="space service-space"></div>
+        <div className={classes.join(' ')}></div>
     );
 };
 

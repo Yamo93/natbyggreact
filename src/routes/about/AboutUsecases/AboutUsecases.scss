@@ -1,0 +1,142 @@
+@import '../../../utils/variables.scss';
+
+.usecases {
+    width: 100%;
+    max-height: 1500px;
+    height: 100%;
+    min-height: 800px;
+    margin-top: 15rem;
+    padding: 5rem;
+    color: $white-color;
+    /*! Färgeffekt som bakgrund */
+    background: #136a8a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    /*! Media queries för sektionen */
+    @media screen and (max-width: 850px) {
+        max-height: 1500px;
+    }
+
+    @media screen and (max-width: 780px) {
+        max-height: 2000px;
+    }
+
+    @media screen and (max-width: 500px) {
+        max-height: 2475px;
+    }
+
+    @media screen and (max-width: 350px) {
+        max-height: 2880px;
+    }
+
+    @media screen and (min-width: 400px) {
+        max-height: 2320px;
+    }
+
+
+
+
+
+    &__title {
+        display: inline-block;
+        //width: 20%;
+        margin: 15px auto;
+        margin-bottom: 5rem;
+        font-size: 3.2rem;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $carrot;
+        text-align: center;
+
+        /*! Specifika regler för Internet Explorer */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { 
+            width: 100%;
+            border-bottom: none;
+
+        }
+
+        @media screen and (max-width: 570px) {
+            border-bottom: none;
+        }
+    }
+
+    &__grid {
+        width: 90%;
+        height: 100%;
+        padding: 0;
+        /*! Lägger till grids och definierar rader samt kolumner inkl gap */
+        display: grid;
+        //display: -ms-grid;
+        grid-template-columns: repeat(3,  1fr);
+        //-ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        //-ms-grid-rows: 1fr 1fr;
+        grid-gap: 5rem;
+
+        /*! I mindre skärmar ändras antalet rader och kolumner */
+        @media screen and (max-width: 1050px) {
+            grid-template-columns: repeat(2, 1fr);
+            //-ms-grid-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            //-ms-grid-rows: 1fr 1fr 1fr;
+        }
+
+        @media screen and (max-width: 750px) {
+            grid-template-columns: 1fr;
+            //-ms-grid-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            //-ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+        
+
+        &-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /*! Endast för IE */
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                margin-bottom: 85px;
+            }
+
+            /*! Ändrar flex-axis i mindre skärmar så att ikonen hamnar på topp */
+            @media screen and (min-height: 420px) {
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &--icon {
+                font-size: 5rem;
+                color: #53fdef;
+                padding: 3rem;
+                border-radius: 50%;
+                background-color: rgba(#30968d, .9);
+            }
+
+            &-text {
+                width: 90%;
+
+                &--title {
+                    font-size: 2.2rem;
+
+                    @media screen and (min-height: 420px) {
+                        text-align: center;
+                    }
+                }
+
+                &--info {
+                    font-size: 1.7rem;
+
+                    @media screen and (min-height: 420px) {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+}

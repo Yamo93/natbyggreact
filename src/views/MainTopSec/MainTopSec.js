@@ -4,6 +4,7 @@ import './MainTopSec.scss';
 import NavBar from '../../views/NavBar/NavBar';
 import FrontHero from '../../routes/mainpage/FrontHero/FrontHero';
 import ServicesPageTopArea from '../../routes/services/ServicesPageTopArea/ServicesPageTopArea';
+import AboutPageTopArea from '../../routes/about/AboutPageTopArea/AboutPageTopArea';
 
 const TopSec = (props) => {
     let content = null;
@@ -13,6 +14,9 @@ const TopSec = (props) => {
             break;
         case "services":
             content = <ServicesPageTopArea />;
+            break;
+        case "about":
+            content = <AboutPageTopArea />;
             break;
         default:
             content = <FrontHero />;
