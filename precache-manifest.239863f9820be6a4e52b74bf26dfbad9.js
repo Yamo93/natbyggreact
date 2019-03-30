@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/natbyggreact/static/css/main.4447e244.chunk.css"
   },
   {
-    "revision": "2cf568cbebebfe3fe3327cd5acb5d1ad",
+    "revision": "db0c708acff2d98e8556f9cb0432917e",
     "url": "/natbyggreact/index.html"
   }
 ];
