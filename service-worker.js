@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/natbyggreact/precache-manifest.239863f9820be6a4e52b74bf26dfbad9.js"
+  "/natbyggreact/precache-manifest.fac6c4712e1278bb6414c71c5597b86a.js"
 );
 
 workbox.clientsClaim();
