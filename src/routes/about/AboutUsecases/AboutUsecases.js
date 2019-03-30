@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import AboutUsecasesBox from '../AboutUsecasesBox/AboutUsecasesBox';
+
 import './AboutUsecases.scss';
 
 class AboutUsecases extends Component {
@@ -46,48 +48,9 @@ class AboutUsecases extends Component {
         
                 {/* <!-- Grid-elementet --> */}
                 <div className="usecases__grid">
-                    <div className="usecases__grid-box">
-                        <i className="far fa-keyboard usecases__grid-box--icon"></i>
-                        <div className="usecases__grid-box-text">
-                            <h3 className="usecases__grid-box-text--title">Skalbar kod</h3>
-                            <p className="usecases__grid-box-text--info">Vi har alla hört talas om uttrycket "spagettikod". Vi på Nätbygg AB ser till att koden som levereras är utav allra högsta nivå och möjlig att underhålla.</p>
-                        </div>
-                    </div>
-                    <div className="usecases__grid-box">
-                        <i className="fas fa-bug  usecases__grid-box--icon"></i>
-                        <div className="usecases__grid-box-text">
-                            <h3 className="usecases__grid-box-text--title">Lösning av buggar</h3>
-                            <p className="usecases__grid-box-text--info">Möjligtvis har du en existerande webbapplikation med en bristande funktionalitet? Våra utvecklare är redo att hoppa in och lösa dina eventuella problem.</p>
-                        </div>
-                    </div>
-                    <div className="usecases__grid-box">
-                        <i className="fas fa-filter usecases__grid-box--icon"></i>
-                        <div className="usecases__grid-box-text">
-                            <h3 className="usecases__grid-box-text--title">Moderna lösningar</h3>
-                            <p className="usecases__grid-box-text--info">För oss på Nätbygg AB är det viktigt att produkterna håller modern standard. Därför arbetar våra utvecklare med de nyaste teknologierna som används idag.</p>
-                        </div>
-                    </div>
-                    <div className="usecases__grid-box">
-                        <i className="fas fa-window-restore usecases__grid-box--icon"></i>
-                        <div className="usecases__grid-box-text">
-                            <h3 className="usecases__grid-box-text--title">Servertjänster</h3>
-                            <p className="usecases__grid-box-text--info">Vi har lång erfarenhet av arbete med relationella såväl som ickerelationella databaser. Vi har en grupp backend-utvecklare som väntar på att hjälpa dig med din applikation!</p>
-                        </div>
-                    </div>
-                    <div className="usecases__grid-box">
-                        <i className="far fa-hdd usecases__grid-box--icon"></i>
-                        <div className="usecases__grid-box-text">
-                            <h3 className="usecases__grid-box-text--title">Smidig FTP-uppladdning</h3>
-                            <p className="usecases__grid-box-text--info">Med vår hjälp slipper du tänka på uppladdningen av din webbplats. Vi sköter allt från att skaffa domän till att lansera sidan på webben.</p>
-                        </div>
-                    </div>
-                    <div className="usecases__grid-box">
-                        <i className="fas fa-tasks usecases__grid-box--icon"></i>
-                        <div className="usecases__grid-box-text">
-                            <h3 className="usecases__grid-box-text--title">Snabba deadlines</h3>
-                            <p className="usecases__grid-box-text--info">Vi är väldigt måna om att våra klienter får sina produkter i tid. Våra arbetare är punktliga och ser till att din deadline uppfylls.</p>
-                        </div>
-                    </div>
+                {this.state.usecases.map(usecase => {
+                    return <AboutUsecasesBox key={usecase.title} icon={usecase.icon} title={usecase.title} text={usecase.text} />;
+                })}
                 </div>
             </section>
         );

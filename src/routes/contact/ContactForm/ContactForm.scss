@@ -1,0 +1,119 @@
+@import '../../../utils/variables.scss';
+
+/*! Kontaktsektionen */
+.contact {
+    width: 90%;
+    height: 100vh;
+    min-height: 750px;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &__title {
+        display: inline-block;
+        text-align: center;
+        //width: 20%;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        font-size: 3.2rem;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $carrot;
+    }
+
+    &__desc {
+        font-size: 1.9rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    /*! Kontaktformulär */
+    &__form {
+        width: 60%;
+        height: 80rem;
+        min-width: 500px;
+        max-height: 600px;
+        min-height: 500px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 4.5px rgba(0, 0, 0, .4);
+        background-color: $white-color;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 3rem 10rem;
+        font-size: 1.5rem;
+
+        /*! Ändrar storlek på formulär i mindre skärmar */
+        @media screen and (max-width: 560px) {
+            min-width: 450px;
+        }
+        @media screen and (max-width: 560px) {
+            min-width: 450px;
+        }
+
+        @media screen and (max-width: 460px) {
+            width: 90%;
+            padding: 3rem 6rem;
+            min-width: 350px;
+        }
+
+        @media screen and (max-width: 350px) {
+            min-width: 300px;
+            padding: 3rem 4rem;
+        }
+
+        /*! Stil för labels och inputs */
+        &-namelab,
+        &-maillab,
+        &-msglab {
+            margin-bottom: .5rem;
+            text-transform: uppercase;
+        }
+
+        &-nameinput,
+        &-mailinput,
+        &-msginput {
+            border: none;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.445);
+            width: 100%;
+            padding: 1rem;
+            font-family: inherit;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            transition: all .6s;
+        }
+
+        &-nameinput:focus,
+        &-mailinput:focus,
+        &-msginput:focus {
+            outline: none;
+            border-bottom: 2px solid $carrot;
+        }
+
+        /*! Stil för knappen */
+        &-submit {
+            margin-top: 3rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 1.5rem 3.5rem;
+            width: 100%;
+            font-family: inherit;
+            font-size: 1.7rem;
+            color: $white-color;
+            background-color: $carrot;
+            transition: all .3s;
+        }
+
+        &-submit:hover {
+            background-color: $white-color;
+            color: $carrot;
+            border: 2px solid $carrot;
+            /*! Gör den lite större i hover-läge */
+            transform: scale(1.05);
+        }
+    }
+}

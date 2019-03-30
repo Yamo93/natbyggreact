@@ -5,6 +5,7 @@ import NavBar from '../../views/NavBar/NavBar';
 import FrontHero from '../../routes/mainpage/FrontHero/FrontHero';
 import ServicesPageTopArea from '../../routes/services/ServicesPageTopArea/ServicesPageTopArea';
 import AboutPageTopArea from '../../routes/about/AboutPageTopArea/AboutPageTopArea';
+import ContactForm from '../../routes/contact/ContactForm/ContactForm';
 
 const TopSec = (props) => {
     let content = null;
@@ -17,6 +18,9 @@ const TopSec = (props) => {
             break;
         case "about":
             content = <AboutPageTopArea />;
+            break;
+        case "contact":
+            content = <ContactForm />;
             break;
         default:
             content = <FrontHero />;

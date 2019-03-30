@@ -10,6 +10,8 @@ const AreaSpace = (props) => {
             break;
         case "about":
             classes.push('about-space');
+        case "contact":
+            classes.push('contact-space');
         default: 
             break;
     }
