@@ -9,6 +9,7 @@ import ContactForm from '../../routes/contact/ContactForm/ContactForm';
 
 const TopSec = (props) => {
     let content = null;
+    let classes = ['top-sec']; 
     switch (props.page) {
         case "mainpage": 
             content = <FrontHero />;
@@ -18,6 +19,7 @@ const TopSec = (props) => {
             break;
         case "about":
             content = <AboutPageTopArea />;
+            classes.push('special-top-sec');
             break;
         case "contact":
             content = <ContactForm />;
@@ -28,7 +30,7 @@ const TopSec = (props) => {
     }
 
     return (
-    <section className="top-sec">
+    <section className={classes.join(' ')}>
     {/* <!-- Navigationsknapp som endast syns i mindre skärmar --> */}
     <label htmlFor="hamburger" className="navbar__hamburger-label"><i className="fas fa-bars hamburger"></i></label>
     
